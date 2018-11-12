@@ -9,7 +9,7 @@
   <description>Cordova/Phonegap plugin to navigate to a destination using native navigation apps on Android, iOS, and Windows Phone</description>
   <author>Dave Alden</author>
   <engines>
-    <engine name="cordova" version=">=7.1.0"/>
+    <engine name="cordova" version=">=6.5.0"/>
     <engine name="cordova-android" version=">=6.3.0"/>
     <engine name="cordova-ios" version=">=4.3.0"/>
   </engines>
