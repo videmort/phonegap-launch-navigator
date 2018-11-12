@@ -77,7 +77,6 @@ To help ensure this plugin is kept updated, new features are added and bugfixes 
     - [Apple Maps launch method](#apple-maps-launch-method)
 - [App-specifics](#app-specifics)
   - [Lyft](#lyft)
-  - [99 Taxi](#99-taxi)
 - [Reporting issues](#reporting-issues)
 - [Credits](#credits)
 - [License](#license)
@@ -129,11 +128,7 @@ Android
 * [Lyft](https://play.google.com/store/apps/details?id=me.lyft.android)
 * [MAPS.ME](https://play.google.com/store/apps/details?id=com.mapswithme.maps.pro)
 * [Cabify](https://play.google.com/store/apps/details?id=com.cabify.rider)
-* [99 Taxi](https://play.google.com/store/apps/details?id=com.taxis99&hl=en)
 * [Baidu Maps](https://play.google.com/store/apps/details?id=com.baidu.BaiduMap)
-* [Gaode](https://play.google.com/store/apps/details?id=com.autonavi.minimap&hl=en)
-
-
 * _Any installed app that supports the [`geo:` URI scheme](http://developer.android.com/guide/components/intents-common.html#Maps)_
 
 iOS
@@ -153,10 +148,7 @@ iOS
 * [Lyft](https://itunes.apple.com/us/app/lyft/id529379082?mt=8)
 * [MAPS.ME](https://itunes.apple.com/us/app/maps-me-offline-map-with-navigation-directions/id510623322?mt=8)
 * [Cabify](https://itunes.apple.com/us/app/cabify-enjoy-the-ride/id476087442?mt=8)
-* [99 Taxi](https://itunes.apple.com/gb/app/99-taxi-and-private-drivers/id553663691?mt=8)
 * [Baidu Maps](https://itunes.apple.com/us/app/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE-%E5%85%AC%E4%BA%A4%E5%9C%B0%E9%93%81%E5%87%BA%E8%A1%8C%E5%BF%85%E5%A4%87%E7%9A%84%E6%99%BA%E8%83%BD%E5%AF%BC%E8%88%AA/id452186370?mt=8)
-* [Gaode](https://itunes.apple.com/cn/app/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE-%E7%B2%BE%E5%87%86%E5%9C%B0%E5%9B%BE-%E5%AF%BC%E8%88%AA%E5%BF%85%E5%A4%87/id461703208?mt=8)
-
 
 Windows
 
@@ -189,14 +181,6 @@ This plugin is intended to launch **native** navigation apps and therefore will 
 Add the following xml to your config.xml to use the latest version of this plugin from [npm](https://www.npmjs.com/package/uk.co.workingedge.phonegap.plugin.launchnavigator):
 
     <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" source="npm" />
-
-## OKHTTP Library
-- This plugin uses the [OKHTTP library]() on Android to access Google's remove Geocoding service
-- The library is included at Android build time via Gradle
-- If another plugin in your Cordova project specifies a different version of the OKHTTP library than this plugin, this can cause a Gradle version collision leading to build failure. [See #193](https://github.com/dpa99c/phonegap-launch-navigator/issues/193).
-- You can override the default version of the library specified by this plugin by specifying the `OKHTTP_VERSION` plugin variable during plugin installation:
-    - `cordova plugin add uk.co.workingedge.phonegap.plugin.launchnavigator --variable OKHTTP_VERSION=1.2.3`
-- You can find the version of the library currently specified by this plugin [in the plugin.xml](https://github.com/dpa99c/phonegap-launch-navigator/blob/master/plugin.xml#L50)
 
 # Usage examples
 
@@ -286,8 +270,6 @@ The following table enumerates which apps support which parameters.
 | Android  | _Geo: URI scheme_              |   X  |     X     |       |            |                |  N/A |
 | Android  | Cabify                         |   X  |     X     |   X   |      X     |                |   X  |
 | Android  | Baidu Maps                     |   X  |     X<sup>[\[1\]](#apple_baidu_maps_nicknames_uri)</sup>     |   X   |      X<sup>[\[1\]](#apple_baidu_maps_nicknames_uri)</sup>     |        X       |   X  |
-| Android  | 99 Taxi                        |   X  |     X     |   X   |      X     |                |   X  |
-| Android  | Gaode Maps                     |   X  |     X     |   X   |      X     |        X       |   X  |
 | iOS      | Apple Maps - URI scheme        |   X  |           |   X   |            |        X       |   X  |
 | iOS      | Apple Maps - MapKit class      |   X  |     X     |   X   |      X     |        X       |   X  |
 | iOS      | Google Maps                    |   X  |           |   X   |            |        X       |   X  |
@@ -305,8 +287,6 @@ The following table enumerates which apps support which parameters.
 | iOS      | MAPS.ME                        |   X  |           |   X   |            |        X       |   X  |
 | iOS      | Cabify                         |   X  |     X     |   X   |      X     |                |   X  |
 | iOS      | Baidu Maps                     |   X  |     X<sup>[\[1\]](#apple_baidu_maps_nicknames_uri)</sup>     |   X   |      X<sup>[\[1\]](#apple_baidu_maps_nicknames_uri)</sup>     |        X       |   X  |
-| iOS      | 99 Taxi                        |   X  |     X     |   X   |      X     |                |   X  |
-| iOS      | Gaode Maps                     |   X  |     X     |   X   |      X     |        X       |   X  |
 | Windows  | Bing Maps                      |   X  |     X     |   X   |      X     |        X       |   X  |
 
 <a name="baidu_maps_nicknames">[1]</a>: Only supported when Start or Dest is specified as lat/lon (e.g. "50,-4")
@@ -331,13 +311,11 @@ Apps that support specifying transport mode.
 | Android  | Sygic                          |    X    |    X    |           |         |
 | Android  | MAPS.ME                        |    X    |    X    |     X     |    X    |
 | Android  | Baidu Maps                     |    X    |    X    |     X     |    X    |
-| Android  | Gaode Maps                     |    X    |    X    |     X     |    X    |
 | iOS      | Apple Maps                     |    X    |    X    |           |         |
 | iOS      | Google Maps                    |    X    |    X    |     X     |    X    |
 | iOS      | Sygic                          |    X    |    X    |           |         |
 | iOS      | MAPS.ME                        |    X    |    X    |     X     |    X    |
 | iOS      | Baidu Maps                     |    X    |    X    |     X     |    X    |
-| iOS      | Gaode Maps                     |    X    |    X    |     X     |    X    |
 | Windows  | Bing Maps                      |    X    |    X    |           |    X    |
 
 
@@ -380,8 +358,6 @@ Supported apps:
 - `launchnavigator.APP.MAPS_ME` (Android & iOS)
 - `launchnavigator.APP.CABIFY` (Android & iOS)
 - `launchnavigator.APP.BAIDU` (Android & iOS)
-- `launchnavigator.APP.TAXIS_99` (Android & iOS)
-- `launchnavigator.APP.GAODE` (Android & iOS)
 
 ### APP_NAMES
 
@@ -756,34 +732,6 @@ This plugin supports 2 different launch methods for launching the Apple Maps app
 On both Android and iOS, the "ride type" will default to "Lyft" unless otherwise specified in the `extras` list as `id`. 
 
 See the [Lyft documentation](https://developer.lyft.com/v1/docs/deeplinking) for URL scheme details and other supported ride types.
-
-## 99 Taxi
-On both Android and iOS, the extra parameters `client_id` and `deep_link_product_id` are required by 99 Taxi
-
-- `client_id` should follow the pattern `MAP_***` where `***` is the client name given by the 99 Team.
-    - If not specified defaults to `client_id=MAP_123`
-- `deep_link_product_id` identifies the ride category
-    - Currently supported values are:
-        - `316` - POP ride
-        - `326` - TOP ride
-        - `327` - Taxis ride
-    - If not specified defaults to `deep_link_product_id=316`     
-
-On Android, 99 Taxi is currently the only app where `options.start` is a **required** parameter when calling `navigate()`
-- If `navigate()` is called without a start location and the selected app is 99 Taxi, the error callback will be invoked and the 99 Taxi app will not be launched
-- In order for this plugin to automatically provide start location to 99 Taxi (if it's not already specified), the native Android implementation needs to be enhanced to:
-    - check/request runtime permission to use location
-    - add the necessary permission entries to the `AndroidManifest.xml`
-    - check/request high accuracy location is enabled (no point in requesting a low-accuracy city-level position if you want a pickup at your exact current address)
-    - request a high accuracy position to determine the user's current location
-    - handle errors cases such as:
-        - User denies location permission
-        - User denies high accuracy mode permission
-        - Location cannot be retrieved
-- Currently, I don't have time to do all of the above just for the case of 99 Taxi
-    - However I'm willing to accept a PR request which implements the necessary native Android features.
-- Otherwise/until then, you'll need to manually specify the start location for 99 Taxi
-    - If the current user location is required, you can use `cordova-plugin-geolocation` to find this.
 
 # Reporting issues
 

@@ -3,7 +3,7 @@
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="uk.co.workingedge.phonegap.plugin.launchnavigator"
-    version="4.2.1">
+    version="4.1.5">
 
   <name>Launch Navigator</name>
   <description>Cordova/Phonegap plugin to navigate to a destination using native navigation apps on Android, iOS, and Windows Phone</description>
@@ -47,8 +47,7 @@
       <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     </config-file>
 
-    <preference name="OKHTTP_VERSION" default="3.+" />
-    <framework src="com.squareup.okhttp3:okhttp:$OKHTTP_VERSION" />
+    <framework src="com.squareup.okhttp3:okhttp:3+" />
   </platform>
 
   <!-- ios -->
@@ -92,8 +91,6 @@
         <string>mapsme</string>
         <string>cabify</string>
         <string>baidumap</string>
-        <string>taxis99</string>
-        <string>iosamap</string>
       </array>
     </config-file>
 
